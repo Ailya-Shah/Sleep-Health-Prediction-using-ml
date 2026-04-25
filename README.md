@@ -124,7 +124,7 @@ Random Forest outperformed Logistic Regression across the main classification me
 
 K-Means produced three interpretable behavioral profiles, but the silhouette scores show that the structure is weakly separated. This supports using clustering for exploratory profiling rather than strict assignment.
 
-### Elbow Method
+### Elbow Method for selecting k
 
 ![K-Means elbow method](visualizations/clustering/kmeans_elbow_method.png)
 
