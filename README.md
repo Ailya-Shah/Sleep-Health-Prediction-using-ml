@@ -1,8 +1,8 @@
 # Sleep Health Analysis and Prediction Using Machine Learning
 
-Project repository: https://github.com/Ailya-Shah/CS-245-Semester-Project
+Project repository: https://github.com/Ailya-Shah/Sleep-Health-Prediction-using-ml
 
-**Report authors:** Ailya Zainab (523506) 
+**Report authors:** Ailya Zainab (523506) Armish Saleem (513103)
 
 **Program:** Department of Computer Science, CS-245 Machine Learning  
 **Repository owner / author note:** Ailya Shah, Data Science at SEECS
