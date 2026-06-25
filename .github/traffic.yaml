@@ -1,0 +1,21 @@
+name: Repo Traffic Backup
+
+on:
+  schedule:
+    - cron: '0 0 * * *' # Runs every day at midnight UTC
+  workflow_dispatch: # Allows you to run it manually
+
+jobs:
+  backup:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout Code
+        uses: actions/checkout@v4
+
+      - name: Fetch and Record Traffic Data
+        uses: sangonzal/repository-traffic-action@v0.1.1
+        env:
+          API_TOKEN: ${{ secrets.TRAFFIC_TOKEN }}
+        with:
+          # This automatically stores data in a branch named 'traffic'
+          traffic-branch: traffic
