@@ -2,24 +2,13 @@ name: Repo Traffic Backup
 
 on:
   schedule:
-    - cron: '0 0 * * *' # Runs every day at midnight UTC
-  workflow_dispatch: # Allows you to run manually
+    - cron: "0 23 * * *"   # once a day, 23:00 UTC
+  workflow_dispatch:        # lets you run it manually
 
 jobs:
-  backup:
+  run:
     runs-on: ubuntu-latest
     steps:
-      - name: Checkout Code
-        uses: actions/checkout@v4
-
-      - name: Fetch and Record Traffic Data
-        uses: jasonetco/create-an-issue@v2 # Uses a highly stable environment
-        env:
-          GITHUB_TOKEN: ${{ secrets.TRAFFIC_TOKEN }}
-
-      - name: Sync Traffic Stats
-        uses: leonsteinhaeuser/create-github-secret-action@v1.1.1
-        # Alternative light action strictly designed for data logging
+      - uses: jgehrcke/github-repo-stats@v1.4.2
         with:
-          secret_name: 'TRAFFIC_LOG'
-          secret_value: 'Sync'
+          ghtoken: ${{ secrets.TRAFFIC_TOKEN }}
