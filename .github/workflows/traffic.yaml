@@ -2,8 +2,8 @@ name: Repo Traffic Backup
 
 on:
   schedule:
-    - cron: "0 23 * * *"   # once a day, 23:00 UTC
-  workflow_dispatch:        # lets you run it manually
+    - cron: "0 23 * * *"
+  workflow_dispatch:
 
 jobs:
   run:
@@ -12,3 +12,4 @@ jobs:
       - uses: jgehrcke/github-repo-stats@v1.4.2
         with:
           ghtoken: ${{ secrets.TRAFFIC_TOKEN }}
+          databranch: traffic
